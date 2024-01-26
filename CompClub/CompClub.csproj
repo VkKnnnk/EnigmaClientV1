@@ -243,10 +243,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resourses\Images\AppDesign\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resourses\Images\AppDesign\comps.png" />
     <Resource Include="Resourses\Images\AppDesign\exit.png" />
     <Resource Include="Resourses\Images\AppDesign\icon.png" />
-    <Resource Include="Resourses\Images\AppDesign\logo.png" />
     <Resource Include="Resourses\Images\AppDesign\main_wallpaper.jpg" />
     <Resource Include="Resourses\Images\AppDesign\mbox_back.png" />
     <Resource Include="Resourses\Images\AppDesign\settings.png" />
