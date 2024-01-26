@@ -1,0 +1,54 @@
+﻿<Window x:Class="CompClub.View.AuthPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompClub"
+        mc:Ignorable="d"
+        Height="768" Width="1366"
+        MinHeight="500" MinWidth="400"
+        WindowState="Maximized" ResizeMode="NoResize"
+        WindowStyle="None" Icon="/Resourses/Images/AppDesign/icon.png" ShowInTaskbar="False"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary Source="/Resourses/Styles/AuthPageStyle.xaml" />
+    </Window.Resources>
+
+    <Window.Background>
+        <ImageBrush ImageSource="/Resourses/Images/AppDesign/comps.png"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="518"/>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Style="{StaticResource BlockStyle}" Opacity="0.98"/>
+        <Border  Grid.Column="1" Style="{StaticResource BlockStyle}" Background="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="130px"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Image Source="/Resourses/Images/AppDesign/logo.png" Style="{StaticResource LogoStyle}"  VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Style="{StaticResource MainStackStyle}">
+                    <Label Content="Вход в систему" x:Name="EntryLabel" Style="{StaticResource TitleLabelStyle}"/>
+                    <WrapPanel>
+                        <Button IsEnabled="False" Content="Постоянный клиент" Style="{StaticResource ButtonStyle}" Click="ClientButton_Click" x:Name="ClientButton"/>
+                        <Button Content="У меня чек" Style="{StaticResource ButtonStyle}" Click="CheckButton_Click" x:Name="CheckButton"/>
+                    </WrapPanel>
+                    <Label Content="Номер чека:" x:Name="CheckLabel" Visibility="Collapsed"/>
+                    <TextBox x:Name="CheckText" Visibility="Collapsed" MaxLength="10"/>
+                    <Label Content="Логин:" x:Name="LoginLabel"/>
+                    <TextBox x:Name="LoginText"/>
+                    <Label Content="Пароль:" x:Name="PasswordLabel"/>
+                    <PasswordBox x:Name="PasswordText"/>
+                    <Button IsDefault="True" Content="Войти" Style="{StaticResource EnterButtonStyle}" x:Name="EnterButton" Click="EnterButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

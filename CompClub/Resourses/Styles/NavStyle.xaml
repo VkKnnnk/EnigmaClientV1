@@ -1,0 +1,105 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Дизайн верхнего контейнера-->
+    <Style TargetType="Border" x:Key="TopContainerStyle">
+        <Setter Property="Grid.ColumnSpan" Value="3"/>
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <Setter Property="Background" Value="#131313"/>
+    </Style>
+    <!--Полоса - разделитель-->
+    <Style TargetType="Border" x:Key="SplitLineStyle">
+        <Setter Property="Grid.Column" Value="0"/>
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    <!--Дизайн контейнера навигации-->
+    <Style TargetType="Frame" x:Key="NavigationFrameStyle">
+        <Setter Property="Grid.Row" Value="1"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+    </Style>
+    <!--Дизайн кнопок-->
+    <Style TargetType="Button" x:Key="ButtonStyle">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="30 0 0 0"/>
+        <Setter Property="FontSize" Value="20px"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+
+                <Setter Property="Foreground" Value="#ffff52"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Дизайн кнопки пополнения-->
+    <Style TargetType="Button" x:Key="DepositButtonStyle" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Margin" Value="7 0 0 0"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#ffff52"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <!--Дизайн кнопки выхода/настроек-->
+    <Style TargetType="Button" x:Key="ExitButtonStyle" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="Margin" Value="5 50 7 0"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    <!--Дизайн названия клуба-->
+    <Style TargetType="Label" x:Key="MainLabelStyle">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30px"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Grid.Row" Value="0"/>
+        <Setter Property="Grid.Column" Value="0"/>
+    </Style>
+    
+    <!--Дизайн отображения пользовательской информации-->
+    <Style TargetType="Label" x:Key="UserLabelStyle">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="20px"/>
+    </Style>
+    <Style TargetType="Run" x:Key="RunStyle">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="20px"/>
+    </Style>
+    <!--Дизайн названия логотипа клуба-->
+    <Style TargetType="Image" x:Key="IconStyle">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="20 0 15 0"/>
+        <Setter Property="Source" Value="/Resourses/Images/AppDesign/icon.png"/>
+    </Style>
+    <!--Дизайн кнопки активации тарифа-->
+    <Style TargetType="Button" x:Key="ActivateButtonStyle" BasedOn="{StaticResource ButtonStyle}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <!--Дизайн отображения таймера-->
+    <Style TargetType="Label" x:Key="TimerLabelStyle" BasedOn="{StaticResource MainLabelStyle}">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="ContentStringFormat" Value="HH:mm:ss"/>
+    </Style>
+</ResourceDictionary>

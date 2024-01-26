@@ -1,0 +1,36 @@
+﻿<Page x:Class="CompClub.View.Pages.Deposit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CompClub.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Deposit">
+<Page.Resources>
+        <ResourceDictionary Source="/Resourses/Styles/AuthPageStyle.xaml" />
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Пополнить баланс" Grid.Column="1" Style="{StaticResource MainLabelStyle}"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Margin="30">
+            <Label Content="Введите сумму" Style="{StaticResource TitleLabelStyle}" HorizontalAlignment="Left" FontSize="18px"/>
+            <TextBox x:Name="MoneyText" PreviewTextInput="MoneyText_PreviewTextInput" MaxLength="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 20 0">
+                <Image Source="/Resourses/Images/Payments/mastercard.png" Style="{StaticResource IconsPayments}"/>
+                <Image Source="/Resourses/Images/Payments/visa.png" Style="{StaticResource IconsPayments}"/>
+                <Image Source="/Resourses/Images/Payments/qiwi.png" Style="{StaticResource IconsPayments}" Height="28px"/>
+                <Image Source="/Resourses/Images/Payments/paypal.png" Style="{StaticResource IconsPayments}" Height="30px"/>
+            </StackPanel>
+            <Button IsDefault="True" x:Name="EnterDeposButton" Content="Пополнить" Click="EnterDeposButton_Click" Style="{StaticResource ButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Page>
